@@ -56,18 +56,37 @@ def get_sources(category):
     return sources_results
 
     def get_articles(source_id,limit):
-    '''
-    Function that gets articles based on the source id
-    '''
-    get_article_location_url = articles_url.format(source_id,limit,api_key)
+      '''
+      Function that gets articles based on the source id
+      '''
+      get_article_location_url = articles_url.format(source_id,limit,api_key)
 
-    with urllib.request.urlopen(get_article_location_url) as url:
-        articles_location_data = url.read()
-        articles_location_response = json.loads(articles_location_data)
+      with urllib.request.urlopen(get_article_location_url) as url:
+          articles_location_data = url.read()
+          articles_location_response = json.loads(articles_location_data)
 
-        articles_location_results = None
+          articles_location_results = None
 
-        if articles_location_response['articles']:
-            articles_location_results = process_articles(articles_location_response['articles'])
-        
-    return articles_location_results
+          if articles_location_response['articles']:
+              articles_location_results = process_articles(articles_location_response['articles'])
+          
+      return articles_location_results
+
+   def topheadlines(limit):
+        '''
+        Function that gets articles based on the source id
+        '''
+        get_topheadlines_url = topheadlines_url.format(limit,api_key)
+
+        with urllib.request.urlopen(get_topheadlines_url) as url:
+            topheadlines_data = url.read()
+            topheadlines_response = json.loads(topheadlines_data)
+
+            topheadlines_results = None
+
+            if topheadlines_response['articles']:
+                topheadlines_results = process_articles(topheadlines_response['articles'])
+            
+        return topheadlines_results
+    
+  
