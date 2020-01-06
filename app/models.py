@@ -20,6 +20,9 @@ class Articles:
   Article class that defines the article objects
   '''
   def __init__(self,author,title,description,url,urlToImage,publishedAt):
+    '''
+    Function that initiates the sources class
+    '''
     self.author = author
     self.title = title
     self.description = description
