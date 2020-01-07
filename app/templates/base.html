@@ -23,71 +23,6 @@
 </head>
 <body>
 <div class="container-fluid">
-    <header>
-        <!-- <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="/">Top News</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/business">Business</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/entertainment">Entertainment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/health">Health</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/science">Science</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/sports">Sports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/technology">Technology</a>
-                    </li>
-                    <li>
-                        <select onchange="if (this.value) window.location.href=this.value" class="form-control">
-                            <option value="" disabled selected>Select a News Source</option>
-                            {% for source in all_sources %}
-                                <option value="/source/{{ source.id }}">{{ source.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </li>
-                    <li>
-                        <a class="nav-link" data-toggle="collapse" href="#articleSearch">
-                            <span class="fa fa-search"></span></a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
-
-        <form class="collapse" id="articleSearch" action="/search">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg" name="q" placeholder="Search for Articles"
-                       required>
-                <div class="input-group-append">
-                    <input class="input-group-text" type="submit" value="search">
-                </div>
-            </div>
-        </form> -->
-    </header>
-
-    <!-- <div class="content">
-
-        Content block
-        {% block content %}
-        {% endblock %}
-
-    </div> -->
-
-   
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -101,26 +36,3 @@
             crossorigin="anonymous"></script>
 </body>
 </html>
-<!-- {% extends 'bootstrap/base.html' %}
-
-Styles Block
-{% block styles %} 
-{{ super() }}
-<link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Julius Sans One' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Mallanna' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
-<link href="{{url_for('static',filename='css/styles.css')}}" rel="stylesheet"> 
-{% endblock %} 
-
-{% block navbar %}
-    {% include 'navbar.html'%}
-{% endblock %}
-
-{% block scripts %}
-{{super()}}
-<script src="{{url_for('static',filename='js/jquery.j')}}"></script>
-<script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{url_for('static',filename='js/jquery.easing.js')}}"></script>
-<script src="{{url_for('static',filename='js/script.js')}}"></script>
-{% endblock %} -->
