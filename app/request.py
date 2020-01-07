@@ -70,8 +70,7 @@ def get_articles(source_id, limit):
           articles_location_results = None
 
           if articles_location_response['articles']:
-              articles_location_results = process_articles(
-                  articles_location_response['articles'])
+              articles_location_results = process_articles(articles_location_response['articles'])
 
       return articles_location_results
 

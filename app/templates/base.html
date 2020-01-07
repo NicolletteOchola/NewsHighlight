@@ -1,6 +1,109 @@
-{% extends 'bootstrap/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Styles Block -->
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- Font-awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
+
+    {% if title %}
+        <title> Top Headlines & News! {{ title }}</title>
+    {% else %}
+        <title> Top News </title>
+    {% endif %}
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <!-- <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="/">Top News</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/business">Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/entertainment">Entertainment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/health">Health</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/science">Science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/sports">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/technology">Technology</a>
+                    </li>
+                    <li>
+                        <select onchange="if (this.value) window.location.href=this.value" class="form-control">
+                            <option value="" disabled selected>Select a News Source</option>
+                            {% for source in all_sources %}
+                                <option value="/source/{{ source.id }}">{{ source.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-toggle="collapse" href="#articleSearch">
+                            <span class="fa fa-search"></span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <form class="collapse" id="articleSearch" action="/search">
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" name="q" placeholder="Search for Articles"
+                       required>
+                <div class="input-group-append">
+                    <input class="input-group-text" type="submit" value="search">
+                </div>
+            </div>
+        </form> -->
+    </header>
+
+    <!-- <div class="content">
+
+        Content block
+        {% block content %}
+        {% endblock %}
+
+    </div> -->
+
+   
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+</body>
+</html>
+<!-- {% extends 'bootstrap/base.html' %}
+
+Styles Block
 {% block styles %} 
 {{ super() }}
 <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
@@ -16,8 +119,8 @@
 
 {% block scripts %}
 {{super()}}
-<script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+<script src="{{url_for('static',filename='js/jquery.j')}}"></script>
 <script src="{{url_for('static',filename='js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{url_for('static',filename='js/jquery.easing.js')}}"></script>
 <script src="{{url_for('static',filename='js/script.js')}}"></script>
-{% endblock %}
+{% endblock %} -->
