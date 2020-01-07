@@ -1,4 +1,5 @@
-import urllib.request, json
+import urllib.request
+import json
 from .models import Sources, Articles
 from datetime import datetime
 
@@ -22,7 +23,7 @@ def get_sources(category):
   '''
   Function tha gets the json response to the URL trequest
   '''
-  get_sources_url = sources_url.format(category,api_key)
+  get_sources_url = sources_url.format(category, api_key)
 
   with urllib.request.urlopen(get_sources_url) as url:
     get_sources_data = url.read()
@@ -35,7 +36,7 @@ def get_sources(category):
 
     return sources_results
 
-  def process_results(sources_list):
+def process_results(sources_list):
     '''
     Function that processesthe json results
     '''
@@ -50,16 +51,17 @@ def get_sources(category):
         country = source.get('country')
 
         if url:
-            source_object = Sources(id,name,description,url,category,country)
+            source_object = Sources(
+                id, name, description, url, category, country)
             sources_results.append(source_object)
-    
+
     return sources_results
 
-    def get_articles(source_id,limit):
+def get_articles(source_id, limit):
       '''
       Function that gets articles based on the source id
       '''
-      get_article_location_url = articles_url.format(source_id,limit,api_key)
+      get_article_location_url = articles_url.format(source_id, limit, api_key)
 
       with urllib.request.urlopen(get_article_location_url) as url:
           articles_location_data = url.read()
@@ -68,11 +70,12 @@ def get_sources(category):
           articles_location_results = None
 
           if articles_location_response['articles']:
-              articles_location_results = process_articles(articles_location_response['articles'])
-          
+              articles_location_results = process_articles(
+                  articles_location_response['articles'])
+
       return articles_location_results
 
-   def topheadlines(limit):
+def topheadlines(limit):
         '''
         Function that gets articles based on the source id
         '''
@@ -89,7 +92,7 @@ def get_sources(category):
             
         return topheadlines_results
     
-  def everything(limit):
+def everything(limit):
       '''
       Function that gets articles based on the source id
       '''
@@ -106,7 +109,7 @@ def get_sources(category):
           
       return everything_results
 
-  def search_everything(limit,query):
+def search_everything(limit,query):
       '''
       Function that looks for articles based on top headlines
       '''
